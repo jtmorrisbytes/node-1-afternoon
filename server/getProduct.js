@@ -5,6 +5,10 @@ module.exports = requestedId => {
   return products.find(product => {
     console.log("productID", product.id, "requestedID:", requestedId);
     console.log("productid matches requested id", product.id == requestedId);
+    console.log(
+      "productid strictly matches requested id",
+      product.id === requestedId
+    );
     return product.id === requestedId;
   });
 };
