@@ -9,7 +9,7 @@ app.get("/api/products", (req, res) => {
   res.json(getProducts());
 });
 app.get("/api/products/:id", (req, res) => {
-  if (!req.param.id) {
+  if (!req.params.id) {
     res.status(409).send("missing field id");
   } else {
     let product = getProduct(req.params.id);
