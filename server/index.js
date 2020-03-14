@@ -11,8 +11,9 @@ app.get("/api/products", (req, res) => {
 app.get("api/products/:id", (req, res) => {
   if (!req.param.id) {
     res.status(409).send("missing field id");
+  } else {
+    res.json(getProduct(req.param.id));
   }
-  res.json(getProduct(req.param.id));
 });
 app.listen(8080, () => {
   console.log("listening on " + "8080");
