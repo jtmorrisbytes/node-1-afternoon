@@ -5,7 +5,9 @@ const getProduct = require("./getProducts");
 
 const app = express();
 
-app.get("/api/products", getProducts.bind(products));
+app.get("/api/products", (req, res) => {
+  getProducts.bind(products, req, res, products);
+});
 
 app.listen(8080, () => {
   console.log("listening on " + "8080");
