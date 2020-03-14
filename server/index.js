@@ -8,10 +8,12 @@ const app = express();
 app.get("/api/products", (req, res) => {
   res.json(getProducts());
 });
-app.get("api/products/:id",(req,res)=>{
-    if()
-    res.json(getProduct(req.param.id))
-})
+app.get("api/products/:id", (req, res) => {
+  if (!req.param.id) {
+    res.status(409).send("missing field id");
+  }
+  res.json(getProduct(req.param.id));
+});
 app.listen(8080, () => {
   console.log("listening on " + "8080");
 });
