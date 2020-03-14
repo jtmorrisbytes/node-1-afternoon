@@ -1,4 +1,4 @@
-module.exports = (req, res) => {
+module.exports = (req, res, products) => {
   //
   console.log("this should return products:", this);
   res.send("OK");
