@@ -9,6 +9,6 @@ module.exports = requestedId => {
       "productid strictly matches requested id",
       product.id === requestedId
     );
-    return product.id === requestedId;
+    return product.id == requestedId;
   });
 };
