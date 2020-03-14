@@ -1,5 +1,5 @@
 const products = require("./products.json");
-module.exports = id => {
+module.exports = requestedId => {
   // this should return products
-  return products.find(product => product.id === id);
+  return products.find(product => product.id === requestedId);
 };
