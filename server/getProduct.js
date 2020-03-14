@@ -3,7 +3,7 @@ module.exports = requestedId => {
   // this should return products
   console.log("requested id", requestedId);
   return products.find(product => {
-    // console.log("getProduct id", product, "requestedID:");
+    console.log("productID", product.id, "requestedID:", requestedId);
     console.log("productid matches requested id", product.id == requestedId);
     return product.id === requestedId;
   });
