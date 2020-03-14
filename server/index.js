@@ -6,7 +6,7 @@ const getProduct = require("./getProducts");
 const app = express();
 
 app.get("/api/products", (req, res) => {
-  getProducts(req, res, products);
+  res.json(getProducts());
 });
 
 app.listen(8080, () => {
