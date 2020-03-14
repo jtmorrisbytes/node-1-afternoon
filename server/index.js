@@ -1,7 +1,7 @@
 const express = require("express");
 const products = require("./products.json");
-const getProducts = require("./getProduct");
-const getProduct = require("./getProducts");
+const getProducts = require("./getProducts");
+const getProduct = require("./getProduct");
 
 const app = express();
 
