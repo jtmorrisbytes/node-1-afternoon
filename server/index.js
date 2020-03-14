@@ -12,6 +12,10 @@ app.get("/api/products/:id", (req, res) => {
   if (!req.params.id) {
     res.status(409).send("missing field id");
   } else {
+    console.log(
+      "/api/products/:id: expecting an id on req.params",
+      req.params.id
+    );
     let product = getProduct(req.params.id);
     if (product) {
       res.json(product);
