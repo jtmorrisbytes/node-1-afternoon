@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jtmorrisbytes/node-1-afternoon/issues"
   },
-  "homepage": "https://github.com/jtmorrisbytes/node-1-afternoon#readme"
+  "homepage": "https://github.com/jtmorrisbytes/node-1-afternoon#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
