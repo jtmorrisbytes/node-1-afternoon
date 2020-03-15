@@ -8,6 +8,7 @@ module.exports = queryParamsObj => {
         return product[key] == queryParamsObj[key];
       });
     }
+    return result;
   } else {
     return products;
   }
