@@ -19,7 +19,7 @@ app.get("/api/products", (req, res) => {
     }
   }
 
-  res.sendStatus(200);
+  res.json(getProducts(req.query));
   // res.json(getProducts(req.query));
 });
 app.get("/api/products/:id", (req, res) => {
