@@ -13,7 +13,8 @@ app.get("/api/products", (req, res) => {
         error: {
           status: 409,
           message: `query parameter "${key}" is not valid a valid filter for this endpoint`,
-          param: key
+          param: key,
+          expecting: validQueryKeys
         }
       });
     }
