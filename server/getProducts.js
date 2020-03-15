@@ -4,6 +4,11 @@ module.exports = queryParamsObj => {
   if (queryParamsObj) {
     let result = products.slice();
     for (key in queryParamsObj) {
+      if (key === "price") {
+        result = result.filter(product => {
+          return product[key] >= queryParamsObj[key];
+        });
+      }
       result = result.filter(product => {
         return product[key] == queryParamsObj[key];
       });
