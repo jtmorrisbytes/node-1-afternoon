@@ -8,10 +8,11 @@ module.exports = queryParamsObj => {
         result = result.filter(product => {
           return product[key] >= queryParamsObj[key];
         });
+      } else {
+        result = result.filter(product => {
+          return product[key] == queryParamsObj[key];
+        });
       }
-      result = result.filter(product => {
-        return product[key] == queryParamsObj[key];
-      });
     }
     return result;
   } else {
