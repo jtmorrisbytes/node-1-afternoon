@@ -4,13 +4,22 @@ const getProducts = require("./getProducts");
 const getProduct = require("./getProduct");
 
 const app = express();
-
+let validQueryKeys = ["price"];
 app.get("/api/products", (req, res) => {
-  res.json(getProducts());
+  console.log(req.query);
+  for (key in req.query) {
+    if (!validQueryKeys.includes(key)) {
+    }
+  }
+
+  res.sendStatus(200);
+  // res.json(getProducts(req.query));
 });
 app.get("/api/products/:id", (req, res) => {
   if (!req.params.id) {
-    res.status(409).send("missing field id");
+    res.status(409).json({
+      error: { status: 409, message: "missing product id in request params" }
+    });
   } else {
     console.log(
       "/api/products/:id: expecting an id on req.params",
@@ -20,7 +29,13 @@ app.get("/api/products/:id", (req, res) => {
     if (product) {
       res.json(product);
     } else {
-      res.status(404).send("product not found?");
+      res.status(404).json({
+        error: {
+          status: 404,
+          message: "product not found",
+          id: req.params.id
+        }
+      });
     }
   }
 });
