@@ -4,7 +4,7 @@ module.exports = queryParamsObj => {
   if (queryParamsObj) {
     let result = products.slice();
     for (key in queryParamsObj) {
-      result = result.map(product => {
+      result = result.filter(product => {
         return product[key] == queryParamsObj[key];
       });
     }
