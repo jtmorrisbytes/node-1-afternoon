@@ -4,7 +4,7 @@ const getProducts = require("./getProducts");
 const getProduct = require("./getProduct");
 
 const app = express();
-let validQueryKeys = ["price"];
+let validQueryKeys = ["price", "product_name"];
 app.get("/api/products", (req, res) => {
   console.log(req.query);
   for (key in req.query) {
