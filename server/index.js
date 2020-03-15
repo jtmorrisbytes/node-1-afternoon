@@ -9,6 +9,14 @@ app.get("/api/products", (req, res) => {
   console.log(req.query);
   for (key in req.query) {
     if (!validQueryKeys.includes(key)) {
+      res
+        .status(409)
+        .json({
+          error: {
+            status: 409,
+            message: `key "${key}" is not valid a valid filter for this endpoint`
+          }
+        });
     }
   }
 
